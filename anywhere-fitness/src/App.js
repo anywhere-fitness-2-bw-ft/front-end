@@ -17,7 +17,6 @@ const theme = createTheme({
       fontWeightLight: 300,
       fontWeightMedium: 700,
       fontWeightBold: 800
-
     }
 });
 
