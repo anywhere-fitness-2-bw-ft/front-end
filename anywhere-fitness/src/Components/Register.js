@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Typography, Container, TextField, } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { RadioGroup, Radio } from '@mui/material';
+import { FormControlLabel } from '@mui/material';
 
-const useStyles = makeStyles({
-    field: {
-        marginTop: 20,
-        marginBottom: 20,
-        display: 'block'
-    }
-}) 
 
 const Register = () => {
-    const classes = useStyles()
     const [ firstName, setFirstName ] = useState('')
     const [ lastName, setLastName ] = useState('')
     const [ email, setEmail ] = useState('')
@@ -62,7 +55,6 @@ const Register = () => {
             <form noValidate autoComplete='off' onSubmit={handleSubmit}>
                <TextField 
                 onChange={(e) => setFirstName(e.target.value)}
-                className={classes.field}
                 label='First Name'
                 variant='outlined'
                 color='secondary'
@@ -73,7 +65,6 @@ const Register = () => {
 
                 <TextField 
                 onChange={(e) => setLastName(e.target.value)}
-                className={classes.field}
                 label='Last Name'
                 variant='outlined'
                 color='secondary'
@@ -84,7 +75,6 @@ const Register = () => {
 
                 <TextField 
                 onChange={(e) => setEmail(e.target.value)}
-                className={classes.field}
                 label='Email'
                 variant='outlined'
                 color='secondary'
@@ -95,7 +85,6 @@ const Register = () => {
 
             <TextField 
                 onChange={(e) => setPassword(e.target.value)}
-                className={classes.field}
                 label='Password'
                 variant='outlined'
                 color='secondary'
@@ -106,7 +95,6 @@ const Register = () => {
 
             <TextField 
                 onChange={(e) => setPasswordConfirm(e.target.value)}
-                className={classes.field}
                 label='Confirm Password'
                 variant='outlined'
                 color='secondary'
@@ -115,7 +103,10 @@ const Register = () => {
                 error={passwordConfirmError}
                />
 
-
+            <RadioGroup>
+                <FormControlLabel value="1" control={<Radio />} label="Instructor" />
+                <FormControlLabel value="2" control={<Radio />} label="Member" />
+            </RadioGroup>
 
             <Button
             variant='contained'

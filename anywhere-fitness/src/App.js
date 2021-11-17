@@ -3,7 +3,8 @@ import { CssBaseline, createTheme, ThemeProvider  } from '@mui/material';
 // import { makeStyles } from '@mui/material';
 import Header from './Components/Header';
 import { purple } from '@mui/material/colors';
-import Register from './Components/Register';
+// import Register from './Components/Register';
+import Join from './Components/Join';
 
 const theme = createTheme({
   palette: {
@@ -26,7 +27,7 @@ const App =  () => {
     <ThemeProvider theme={theme}>
     <CssBaseline />
       <Header />
-      <Register />
+      <Join />
     </ThemeProvider>
     </>
     
